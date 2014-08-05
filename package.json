@@ -1,0 +1,29 @@
+{
+  "name": "generator-flux-react",
+  "version": "0.0.0",
+  "description": "A yeoman generator for app based on Facebook's Flux/React architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/banderson/generator-flux-react"
+  },
+  "keywords": [
+    "flux",
+    "react",
+    "react.js",
+    "reactjs",
+    "jsx",
+    "yeoman",
+    "yeoman-generator",
+    "facebook"
+  ],
+  "author": "Ben Anderson <banderson@constantcontact.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/banderson/generator-flux-react/issues"
+  },
+  "homepage": "https://github.com/banderson/generator-flux-react"
+}
