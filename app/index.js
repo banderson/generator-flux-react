@@ -21,7 +21,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous Flux generator!'));
+    this.log(yosay('Welcome to the marvelous Flux/React generator!'));
 
     var prompts = [{
       type: 'confirm',
@@ -38,11 +38,18 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+    this.mkdir('src/js/components');
+    this.mkdir('src/js/dispatchers');
+    this.mkdir('src/js/stores');
+    this.mkdir('src/js/constants');
+    this.mkdir('src/js/actions');
+    this.copy('js/index.js', 'src/js/index.js');
+    this.copy('_index.html', 'src/index.html');
+    this.copy('js/components/app.js', 'src/js/components/app.js');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
+    this.copy('gulpfile.js', 'gulpfile.js');
   },
 
   projectfiles: function () {
