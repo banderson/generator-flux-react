@@ -5,12 +5,6 @@ var yeoman = require('yeoman-generator');
 var FluxGenerator = yeoman.generators.Base.extend({
   init: function () {
     this.pkg = require('../package.json');
-
-    this.on('end', function () {
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
-    });
   },
 
   app: function () {
@@ -31,6 +25,12 @@ var FluxGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+  },
+
+  end: function () {
+    if (!this.options['skip-install']) {
+      this.installDependencies();
+    }
   }
 });
 
