@@ -2,6 +2,7 @@
 
 var React = require('react');
 var DataStore = require('../stores/DataStore');
+var ActionCreator = require('../actions/DataActionCreators');
 
 var App = React.createClass({
 
@@ -9,8 +10,18 @@ var App = React.createClass({
     this.setState(DataStore.getAll());
   },
 
+  _onButtonClick: function(e) {
+    var newTitle = prompt('Enter new title:');
+    if (newTitle) {
+      ActionCreator.updateTitle(newTitle);
+    }
+  },
+
   getInitialState: function() {
-    return DataStore.getAll();
+    var data = DataStore.getAll();
+    return {
+      title: data.title || "<%= appName %>"
+    }
   },
 
   componentDidMount: function() {
@@ -23,7 +34,10 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <h1>Hello, Flux!</h1>
+      <div>
+        <h1>Hello, welcome to {this.state.title}!</h1>
+        <button onClick={this._onButtonClick}>Update Title</button>
+      </div>
     );
   }
 

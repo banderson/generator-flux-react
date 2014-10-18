@@ -3,15 +3,13 @@ var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
 var merge = require('react/lib/merge');
 
-var _data = {}; // local data
+var _data = {
+  title: null
+};
 
 // add private functions to modify data
-function create(value) {
-  // ...
-}
-
-function destroy(id) {
-  // ...
+function update(title) {
+  _data.title = title;
 }
 
 var <%= name %> = merge(EventEmitter.prototype, {
@@ -40,13 +38,13 @@ var <%= name %> = merge(EventEmitter.prototype, {
     var action = payload.action;
 
     switch(action.actionType) {
-      case Constants.SEARCH_CLICK:
+      case Constants.UPDATE_TITLE:
         var text = action.text.trim();
         // NOTE: if this action needs to wait on another store:
         // <%= name %>.waitFor([OtherStore.dispatchToken]);
         // For details, see: http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html#why-we-need-a-dispatcher
         if (text !== '') {
-          create(text);
+          update(text);
           <%= name %>.emitChange();
         }
         break;

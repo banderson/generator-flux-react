@@ -5,7 +5,7 @@ module.exports = {
   CHANGE_EVENT: 'change',
 
   ActionTypes: keyMirror({
-    SEARCH_CLICK: null,
+    UPDATE_TITLE: null,
     RECEIVE_DATA: null
   }),
 
