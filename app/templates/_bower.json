@@ -1,6 +1,6 @@
 {
-  "name": "package",
-  "version": "0.0.0",
+  "name": "<%= appSlug %>",
+  "version": "0.1.0",
   "dependencies": {}
 }
 
