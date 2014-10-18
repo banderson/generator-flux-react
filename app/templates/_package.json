@@ -11,5 +11,10 @@
     "react": "^0.11.1",
     "reactify": "^0.14.0",
     "flux": "git://github.com/facebook/flux"
+  },
+
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp"
   }
 }
