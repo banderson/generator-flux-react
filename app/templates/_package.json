@@ -1,7 +1,7 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "description": "",
+  "name": "<%= appSlug %>",
+  "version": "0.1.0",
+  "description": "<%= appName %>: <%= appDesc %>",
   "author": "",
   "license": "MIT",
   "devDependencies": {

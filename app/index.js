@@ -4,6 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var slug = require('slug');
 
 
 var FluxGenerator = yeoman.generators.Base.extend({
@@ -24,15 +25,29 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.log(yosay('Welcome to the marvelous Flux/React generator!'));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      type: 'string',
+      name: 'appName',
+      message: 'What\'s the name of your application?',
+      default: "My Flux App"
+    }, {
+      type: 'string',
+      name: 'appSlug',
+      message: 'Enter a machine-readable name for your application (for package.json)',
+      default: function(answers) {
+        return slug(answers.appName).toLowerCase();
+      }
+    }, {
+      type: 'string',
+      name: 'appDesc',
+      message: 'Describe your application in one sentence:',
+      default: "..."
     }];
 
     this.prompt(prompts, function (props) {
       this.someOption = props.someOption;
-
+      this.appName = props.appName;
+      this.appSlug = props.appSlug;
+      this.appDesc = props.appDesc;
       done();
     }.bind(this));
   },
@@ -47,7 +62,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('_index.html', 'src/index.html');
     this.copy('js/components/app.js', 'src/js/components/app.js');
 
-    this.copy('_package.json', 'package.json');
+    this.template('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
     this.copy('gulpfile.js', 'gulpfile.js');
   },
