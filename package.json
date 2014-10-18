@@ -1,6 +1,6 @@
 {
   "name": "generator-flux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A yeoman generator for app based on Facebook's Flux/React architecture",
   "main": "app/index.js",
   "repository": "banderson/generator-flux-react",
@@ -33,7 +33,8 @@
     "chalk": "~0.4.0",
     "slug": "^0.8.0",
     "yeoman-generator": "~0.17.0",
-    "yosay": "^0.1.0"
+    "yosay": "^0.1.0",
+    "flux": "^2.0.1"
   },
   "devDependencies": {
     "mocha": "*"
