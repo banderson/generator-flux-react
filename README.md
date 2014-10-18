@@ -1,27 +1,27 @@
-# generator-flux [![Build Status](https://secure.travis-ci.org/banderson/generator-flux.png?branch=master)](https://travis-ci.org/banderson/generator-flux)
+# generator-flux
 
-> [Yeoman](http://yeoman.io) generator
+> [Flux](http://facebook.github.io/flux/)/[React](http://facebook.github.io/react/) application generator
 
 
 ## Getting Started
 
-### What is Yeoman?
+### What is Flux?
 
-Trick question. It's not a thing. It's this guy:
+It's an "Application Architecture for Building User Interfaces", built by the team at Facebook. It's a set of patterns building larger applications on top of the incredible [React](http://facebook.github.io/react/) component library.
 
-![](http://i.imgur.com/JHaAlBJ.png)
+![http://facebook.github.io/flux/docs/overview.html#content](http://facebook.github.io/react/img/blog/flux-diagram.png)
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+### Prerequisites
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+You must have [Node.js w/NPM](http://nodejs.org/) installed. I recommend installing via [homebrew](http://brew.sh/), but you should be able to use the [pre-built installers](http://nodejs.org/download/) if you prefer.
+
+Also, `generator-flux` is a [Yeoman](http://yeoman.io/) generator. If you do not have Yeoman installed, first run:
 
 ```bash
 $ npm install -g yo
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+### Installing the generator
 
 To install generator-flux from npm, run:
 
@@ -35,11 +35,34 @@ Finally, initiate the generator:
 $ yo flux
 ```
 
-### Getting To Know Yeoman
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+## After First Run
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+The flux generator is still usefull even after your app is first generated. It comes with several subgenerators that you can invoke at any time to add new:
+
+#### Dispatchers
+```bash
+$ yo flux:dispatcher DispatcherName
+```
+
+#### Stores
+```bash
+$ yo flux:store StoreName
+```
+
+#### Actions
+```bash
+$ yo flux:action ActionCreatorName
+```
+
+
+### Configuration Options
+
+During install-time, you will be prompted to enter a few pieces of information to help create a sane project structure and `package.json` file:
+
+* __Application name__ (_string_): A human-readable name for your project, i.e. "My Flux Application"
+* __Machine-readable name__ (string): This will be used in `package.json` as your project identifier
+* __Application Description__ (string): Describe your application in one sentence, to be used in `package.json` and the generated `README.md`
 
 
 ## License
