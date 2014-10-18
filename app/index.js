@@ -60,7 +60,8 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.mkdir('src/js/actions');
     this.copy('js/index.js', 'src/js/index.js');
     this.copy('_index.html', 'src/index.html');
-    this.copy('js/components/app.js', 'src/js/components/app.js');
+    this.copy('js/constants.js', 'src/js/constants/AppConstants.js');
+    this.copy('js/components/app.js', 'src/js/components/App.js');
 
     this.template('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
@@ -70,6 +71,9 @@ var FluxGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('jshintrc', '.jshintrc');
+    this.composeWith('flux:dispatcher', {args: ['AppDispatcher']});
+    this.composeWith('flux:store', {args: ['DataStore']});
+    this.composeWith('flux:action', {args: ['DataActionCreators']});
   }
 });
 
