@@ -71,6 +71,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
 
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
+    this.copy('gitignore', '.gitignore');
     this.copy('jshintrc', '.jshintrc');
     this.composeWith('flux:dispatcher', {args: ['AppDispatcher']});
     this.composeWith('flux:store', {args: ['DataStore']});
