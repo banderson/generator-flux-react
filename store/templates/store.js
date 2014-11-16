@@ -38,7 +38,7 @@ var <%= name %> = merge(EventEmitter.prototype, {
     var action = payload.action;
 
     switch(action.type) {
-      case Constants.UPDATE_TITLE:
+      case Constants.ActionTypes.UPDATE_TITLE:
         var text = action.text.trim();
         // NOTE: if this action needs to wait on another store:
         // <%= name %>.waitFor([OtherStore.dispatchToken]);
