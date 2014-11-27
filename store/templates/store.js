@@ -37,8 +37,8 @@ var <%= name %> = merge(EventEmitter.prototype, {
   dispatcherIndex: AppDispatcher.register(function(payload) {
     var action = payload.action;
 
-    switch(action.actionType) {
-      case Constants.UPDATE_TITLE:
+    switch(action.type) {
+      case Constants.ActionTypes.UPDATE_TITLE:
         var text = action.text.trim();
         // NOTE: if this action needs to wait on another store:
         // <%= name %>.waitFor([OtherStore.dispatchToken]);
