@@ -62,7 +62,7 @@ $ npm run build
 
 ## After First Run
 
-The flux generator is still usefull even after your app is fully generated. It comes with several subgenerators that you can invoke at any time to add new:
+The flux generator is still useful even after your app is fully generated. It comes with several subgenerators that you can invoke at any time to add new:
 
 #### Dispatchers
 ```bash
