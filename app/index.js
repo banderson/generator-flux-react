@@ -61,7 +61,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('js/index.jsx', 'src/js/index.jsx');
     this.copy('_index.html', 'src/index.html');
     this.copy('js/constants.js', 'src/js/constants/AppConstants.js');
-    this.copy('js/components/app.js', 'src/js/components/App.js');
+    this.copy('js/components/app.jsx', 'src/js/components/App.jsx');
 
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
