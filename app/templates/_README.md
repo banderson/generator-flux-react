@@ -22,6 +22,11 @@ $ npm run build
 
 You can add additional functionality to your application by invoking the subgenerators included in the Flux Generator. You can add components using the following commands:
 
+#### Components
+```bash
+$ yo flux:component ComponentName
+```
+
 #### Dispatchers
 ```bash
 $ yo flux:dispatcher DispatcherName
