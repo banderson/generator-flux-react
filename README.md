@@ -64,6 +64,11 @@ $ npm run build
 
 The flux generator is still useful even after your app is fully generated. It comes with several subgenerators that you can invoke at any time to add new:
 
+#### Components
+```bash
+$ yo flux:component ComponentName
+```
+
 #### Dispatchers
 ```bash
 $ yo flux:dispatcher DispatcherName
