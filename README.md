@@ -2,14 +2,13 @@
 
 > [Flux](http://facebook.github.io/flux/)/[React](http://facebook.github.io/react/) application generator
 
-
 ## Getting Started
 
 ### What is Flux?
 
 It's an "Application Architecture for Building User Interfaces", built by the team at Facebook. It's a set of patterns building larger applications on top of the incredible [React](http://facebook.github.io/react/) component library.
 
-![http://facebook.github.io/flux/docs/overview.html#content](http://facebook.github.io/react/img/blog/flux-diagram.png)
+![http://facebook.github.io/flux/docs/overview.html#content](http://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
 
 ### Prerequisites
 
