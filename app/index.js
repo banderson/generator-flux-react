@@ -30,23 +30,24 @@ var FluxGenerator = yeoman.generators.Base.extend({
       message: 'What\'s the name of your application?',
       default: "My Flux App"
     }, {
+      type: 'confirm',
+      name: 'server',
+      message: 'Would you like a generate a static, localhost server?',
+      default: true
+    }, {
       type: 'string',
       name: 'appSlug',
       message: 'Enter a machine-readable name for your application (for package.json)',
       default: function(answers) {
         return slug(answers.appName).toLowerCase();
       }
-    }, {
-      type: 'string',
-      name: 'appDesc',
-      message: 'Describe your application in one sentence:',
-      default: "..."
     }];
 
     this.prompt(prompts, function (props) {
       this.someOption = props.someOption;
       this.appName = props.appName;
-      this.appSlug = props.appSlug;
+      this.server = props.server;
+      this.appSlug = slug(props.appName).toLowerCase();
       this.appDesc = props.appDesc;
       done();
     }.bind(this));
@@ -67,6 +68,14 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.template('_README.md', 'README.md');
     this.copy('_bower.json', 'bower.json');
     this.copy('gulpfile.js', 'gulpfile.js');
+  },
+
+  server: function() {
+    if (this.server) {
+      this.npmInstall(['connect'], { 'saveDev': true });
+      this.npmInstall(['serve-static'], { 'saveDev': true });
+      this.copy('server.js', 'server.js');
+    }
   },
 
   projectfiles: function () {

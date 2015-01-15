@@ -14,7 +14,8 @@
   },
 
   "scripts": {
-    "start": "gulp build && open dist/index.html && gulp watch",
-    "build": "gulp"
+    "start": "gulp build && gulp watch",
+    "build": "gulp",
+    "server": "node server.js"
   }
 }
