@@ -46,13 +46,13 @@ During install-time, you will be prompted to enter some information to help crea
 
 ### Running the scaffolded project
 
-Once your project is generated, you can build and open the built application by running:
+The generated project includes a live-reloading static server on port `8080` (you can change the port in the `gulpfile.js` config), which will build, launch, and rebuild the app whenever you change application code. To start the server, run:
 
 ```bash
 $ npm start
 ```
 
-That will launch the app and rebuild whenever you change application code. If you prefer to just build without the `watch` functionality, run:
+If you prefer to just build without the live reload and build-on-each-change watcher, run:
 
 ```bash
 $ npm run build
