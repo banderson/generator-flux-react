@@ -27,17 +27,12 @@ You can add additional functionality to your application by invoking the subgene
 $ yo flux:component ComponentName
 ```
 
-#### Dispatchers
+#### Actions
 ```bash
-$ yo flux:dispatcher DispatcherName
+$ yo flux:action ActionCreatorName
 ```
 
 #### Stores
 ```bash
 $ yo flux:store StoreName
-```
-
-#### Actions
-```bash
-$ yo flux:action ActionCreatorName
 ```

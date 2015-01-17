@@ -68,19 +68,14 @@ The flux generator is still useful even after your app is fully generated. It co
 $ yo flux:component ComponentName
 ```
 
-#### Dispatchers
+#### Actions
 ```bash
-$ yo flux:dispatcher DispatcherName
+$ yo flux:action ActionCreatorName
 ```
 
 #### Stores
 ```bash
 $ yo flux:store StoreName
-```
-
-#### Actions
-```bash
-$ yo flux:action ActionCreatorName
 ```
 
 
