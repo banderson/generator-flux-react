@@ -40,7 +40,6 @@ $ yo flux
 During install-time, you will be prompted to enter some information to help create the project structure and `package.json` file:
 
 * __Application name__ (_string_): A human-readable name for your project, i.e. "My Flux Application"
-* __Machine-readable name__ (_string_): This will be used in `package.json` as your project identifier, and is generated automatically from the _Application Name_ if you choose the default.
 * __Application Description__ (_string_): Describe your application in one sentence, to be used in `package.json` and the generated `README.md`
 
 
