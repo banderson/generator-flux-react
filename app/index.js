@@ -37,7 +37,6 @@ var FluxGenerator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
       this.appName = props.appName;
       this.appSlug = slug(props.appName).toLowerCase();
       this.appDesc = props.appDesc;
