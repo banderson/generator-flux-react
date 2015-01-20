@@ -10,6 +10,21 @@ It's an "Application Architecture for Building User Interfaces", built by the te
 
 ![http://facebook.github.io/flux/docs/overview.html#content](http://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
 
+
+### Features:
+- [x] Facebook's Flux architecture (using official [dispatcher](https://github.com/facebook/flux/blob/master/src/Dispatcher.js))
+- [x] [Gulp](http://gulpjs.com/) for builds
+- [x] [Browserify](http://browserify.org/) and CJS modules
+- [x] [6to5](https://6to5.org/) for es6 transpilation
+- [x] Static server with livereload
+
+#### Coming soon:
+- [ ] SASS/Less CSS preprocessor
+- [ ] React-router
+- [ ] Storage options: `localStorage` and Firebase to start
+- [ ] Test generation (likely using Jest)
+- [ ] Cleaner ActionCreator patterns
+
 ### Prerequisites
 
 You must have [Node.js w/NPM](http://nodejs.org/) installed. I recommend installing via [homebrew](http://brew.sh/), but you should be able to use the [pre-built installers](http://nodejs.org/download/) if you prefer.
