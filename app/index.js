@@ -65,6 +65,10 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.npmInstall(['gulp-connect'], { 'saveDev': true });
   },
 
+  transpilation: function() {
+    this.npmInstall(['6to5ify'], { 'saveDev': true })
+  },
+
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');

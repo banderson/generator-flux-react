@@ -6,7 +6,7 @@ var connect = require('gulp-connect');
 gulp.task('browserify', function() {
   gulp.src('src/js/index.jsx')
     .pipe(browserify({
-      transform: 'reactify'
+      transform: ['reactify', '6to5ify']
     }))
     .pipe(concat('index.js'))
     .pipe(gulp.dest('dist/js'));
