@@ -17,9 +17,9 @@ It's an "Application Architecture for Building User Interfaces", built by the te
 - [x] [Browserify](http://browserify.org/) and CJS modules
 - [x] [6to5](https://6to5.org/) for es6 transpilation
 - [x] Static server with livereload
+- [x] SASS CSS preprocessor
 
 #### Coming soon:
-- [ ] SASS/Less CSS preprocessor
 - [ ] React-router
 - [ ] Storage options: `localStorage` and Firebase to start
 - [ ] Test generation (likely using Jest)
