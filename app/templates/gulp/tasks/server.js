@@ -1,13 +1,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
+var config = require('../config').server;
 
 gulp.task('server', function() {
-  connect.server({
-    root: 'dist',
-    host: 'localhost',
-    port: 8080,
-    livereload: {
-      port: 35929
-    }
-  });
+  connect.server(config.settings);
 });
