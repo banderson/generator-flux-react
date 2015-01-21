@@ -1,47 +1,16 @@
-var gulp = require('gulp');
-var browserify = require('gulp-browserify');
-var concat = require('gulp-concat');
-var connect = require('gulp-connect');
-var sass = require('gulp-sass');
+/*
+  gulpfile.js
+  ===========
+  NOTE: adapted from github.com/greypants/gulp-starter
+  Rather than manage one giant configuration file responsible
+  for creating multiple tasks, each task has been broken out into
+  its own file in gulp/tasks. Any files in that directory get
+  automatically required below.
+  To add a new task, simply add a new task file that directory.
+  gulp/tasks/default.js specifies the default set of tasks to run
+  when you run `gulp`.
+*/
+var requireDir = require('require-dir');
 
-gulp.task('browserify', function() {
-  gulp.src('src/js/index.jsx')
-    .pipe(browserify({
-      transform: ['reactify', '6to5ify']
-    }))
-    .pipe(concat('index.js'))
-    .pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('copy', function() {
-  gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'));
-});
-
-gulp.task('styles', function() {
-  gulp.src('src/styles/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('dist/styles/'))
-    .pipe(connect.reload());
-});
-
-gulp.task('build', ['browserify', 'styles', 'copy'], function() {
-  gulp.src('src/**/*.*').pipe(connect.reload());
-});
-
-gulp.task('watch', ['build'], function() {
-  gulp.watch('src/**/*.*', ['build']);
-});
-
-gulp.task('server', function() {
-  connect.server({
-    root: 'dist',
-    host: 'localhost',
-    port: 8080,
-    livereload: {
-      port: 35929
-    }
-  });
-});
-
-gulp.task('default', ['build', 'watch', 'server']);
+// Require all tasks in gulp/tasks, including subfolders
+requireDir('./gulp/tasks', { recurse: true });

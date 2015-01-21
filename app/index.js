@@ -58,7 +58,14 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
     this.copy('_bower.json', 'bower.json');
+  },
+
+  gulp: function() {
+    this.npmInstall(['require-dir']);
     this.copy('gulpfile.js', 'gulpfile.js');
+    this.mkdir('gulp');
+    this.mkdir('gulp/tasks');
+    this.directory('gulp/tasks', 'gulp/tasks');
   },
 
   server: function() {
