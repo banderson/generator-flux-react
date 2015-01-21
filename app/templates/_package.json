@@ -4,13 +4,13 @@
   "description": "<%= appName %>: <%= appDesc %>",
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "react": "^0.11.1",
+    "flux": "^2.0.1"
+  },
   "devDependencies": {
     "gulp": "^3.8.7",
-    "gulp-browserify": "^0.5.0",
-    "gulp-concat": "^2.2.0",
-    "react": "^0.11.1",
-    "reactify": "^0.14.0",
-    "flux": "^2.0.1"
+    "reactify": "^0.14.0"
   },
 
   "scripts": {

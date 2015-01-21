@@ -61,7 +61,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   gulp: function() {
-    this.npmInstall(['require-dir']);
+    this.npmInstall(['require-dir', 'vinyl-source-stream', 'browserify', 'watchify', 'gulp-util', 'vinyl-buffer'], { saveDev: true });
     this.copy('gulpfile.js', 'gulpfile.js');
     this.mkdir('gulp');
     this.copy('gulp/config.js', 'gulp/config.js');
