@@ -19,8 +19,10 @@ It's an "Application Architecture for Building User Interfaces", built by the te
 - [x] Static server with livereload
 - [x] SASS CSS preprocessor
 
+### Basic Support
+- [ ] Choice of UI Framework (React-Bootstrap, Material UI)
+
 #### Coming soon:
-- [ ] UI Framework (React-Bootstrap, Material UI, etc.)
 - [ ] React-router
 - [ ] Storage options: `localStorage` and Firebase to start
 - [ ] Test generation (likely using Jest)
