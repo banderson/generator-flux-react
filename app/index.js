@@ -34,12 +34,18 @@ var FluxGenerator = yeoman.generators.Base.extend({
       name: 'appDesc',
       message: 'Describe your application in one sentence:',
       default: '...'
+    }, {
+      type: 'list',
+      name: 'ui',
+      message: 'UI Frameworks',
+      choices: [{value: 'naked', name: 'None (Vanilla JS/HTML/CSS)', checked: true}, {value: 'react-bootstrap', name:'React Bootstrap'}]
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
       this.appSlug = slug(props.appName).toLowerCase();
       this.appDesc = props.appDesc;
+      this.uiChoice = props.ui;
       done();
     }.bind(this));
   },
@@ -53,7 +59,6 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('js/index.jsx', 'src/js/index.jsx');
     this.copy('_index.html', 'src/index.html');
     this.copy('js/constants.js', 'src/js/constants/AppConstants.js');
-    this.copy('js/components/app.jsx', 'src/js/components/App.jsx');
 
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
@@ -73,6 +78,15 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.directory('gulp/tasks', 'gulp/tasks');
   },
 
+  ui: function() {
+    if (this.uiChoice !== 'naked') {
+      this.npmInstall([this.uiChoice], { save: true });
+    }
+    this.directory('js/components/'+ this.uiChoice, 'src/js/components/');
+    this.mkdir('src/styles');
+    this.directory('styles/'+ this.uiChoice, 'src/styles/');
+  },
+
   server: function() {
     this.npmInstall(['gulp-connect'], { 'saveDev': true });
   },
@@ -83,8 +97,6 @@ var FluxGenerator = yeoman.generators.Base.extend({
 
   styles: function() {
     this.npmInstall(['gulp-sass'], { 'saveDev': true });
-    this.mkdir('src/styles');
-    this.copy('styles/main.scss', 'src/styles/main.scss');
   },
 
   projectfiles: function () {

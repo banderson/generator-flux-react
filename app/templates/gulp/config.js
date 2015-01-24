@@ -13,7 +13,7 @@ module.exports = {
     }
   },
   sass: {
-    src: src + "/styles/**/*.{sass,scss}",
+    src: src + "/styles/**/*.{sass,scss,css}",
     dest: dest + "/styles",
     settings: {
       indentedSyntax: false, // Enable .sass syntax?
