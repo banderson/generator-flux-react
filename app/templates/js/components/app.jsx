@@ -1,5 +1,3 @@
-/*** @jsx React.DOM */
-
 var React = require('react');
 var DataStore = require('../stores/DataStore');
 var ActionCreator = require('../actions/DataActionCreators');

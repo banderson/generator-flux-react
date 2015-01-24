@@ -60,8 +60,12 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('_bower.json', 'bower.json');
   },
 
+  npm: function() {
+    this.npmInstall(['react', 'flux', 'object-assign'], { save: true });
+  },
+
   gulp: function() {
-    this.npmInstall(['require-dir', 'vinyl-source-stream', 'browserify', 'watchify', 'gulp-util', 'vinyl-buffer'], { saveDev: true });
+    this.npmInstall(['require-dir', 'vinyl-source-stream', 'browserify', 'watchify', 'gulp-util', 'vinyl-buffer', 'reactify'], { saveDev: true });
     this.copy('gulpfile.js', 'gulpfile.js');
     this.mkdir('gulp');
     this.copy('gulp/config.js', 'gulp/config.js');

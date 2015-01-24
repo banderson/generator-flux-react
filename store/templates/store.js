@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatchers/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
-var merge = require('react/lib/merge');
+var assign = require('object-assign');
 
 var _data = {
   title: null
@@ -12,7 +12,7 @@ function update(title) {
   _data.title = title;
 }
 
-var <%= name %> = merge(EventEmitter.prototype, {
+var <%= name %> = assign(EventEmitter.prototype, {
 
   // public methods used by Controller-View to operate on data
   getAll: function() {

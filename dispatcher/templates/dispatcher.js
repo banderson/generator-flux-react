@@ -1,8 +1,8 @@
 var Dispatcher = require('flux').Dispatcher;
 var Constants = require('../constants/AppConstants');
-var copyProperties = require('react/lib/copyProperties');
+var assign = require('object-assign');
 
-var <%= name %> = copyProperties(new Dispatcher(), {
+var <%= name %> = assign(new Dispatcher(), {
 
   handleServerAction: function(action) {
     var payload = {
