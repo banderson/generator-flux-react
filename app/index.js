@@ -38,7 +38,16 @@ var FluxGenerator = yeoman.generators.Base.extend({
       type: 'list',
       name: 'ui',
       message: 'UI Frameworks',
-      choices: [{value: 'naked', name: 'None (Vanilla JS/HTML/CSS)', checked: true}, {value: 'react-bootstrap', name:'React Bootstrap'}]
+      choices: [{
+        value: 'naked',
+        name: 'None (Vanilla JS/HTML/CSS)'
+      }, {
+        value: 'react-bootstrap',
+        name:'React Bootstrap'
+      }, {
+        value: 'material-ui',
+        name: 'Material UI'
+      }]
     }];
 
     this.prompt(prompts, function (props) {
@@ -79,8 +88,14 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   ui: function() {
-    if (this.uiChoice !== 'naked') {
-      this.npmInstall([this.uiChoice], { save: true });
+    switch (this.uiChoice) {
+      case 'naked':
+        break;
+      case 'material-ui':
+        this.npmInstall(['material-ui-sass'], { save: true });
+      default:
+        this.npmInstall([this.uiChoice], { save: true });
+        break;
     }
     this.directory('js/components/'+ this.uiChoice, 'src/js/components/');
     this.mkdir('src/styles');
