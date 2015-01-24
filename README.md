@@ -20,6 +20,7 @@ It's an "Application Architecture for Building User Interfaces", built by the te
 - [x] SASS CSS preprocessor
 
 #### Coming soon:
+- [ ] UI Framework (React-Bootstrap, Material UI, etc.)
 - [ ] React-router
 - [ ] Storage options: `localStorage` and Firebase to start
 - [ ] Test generation (likely using Jest)
