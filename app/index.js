@@ -46,7 +46,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
         name:'React Bootstrap'
       }, {
         value: 'material-ui',
-        name: 'Material UI'
+        name: 'Material UI (experimental beta)'
       }]
     }];
 
