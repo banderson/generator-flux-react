@@ -1,5 +1,5 @@
 var React = require('react');
-var ActionCreator = require('../actions/DataActionCreators');
+var ActionCreator = require('../actions/ActionCreators');
 var Task = require('./Task.jsx');
 var mui = require('material-ui'),
     Paper = mui.Paper;
@@ -7,15 +7,15 @@ var mui = require('material-ui'),
 var TaskList = React.createClass({
   getDefaultProps: function() {
     return {
-      tasks: []
+      tasks: {}
     };
   },
 
   render: function() {
     return (
       <form id="task-list">
-        {this.props.tasks.map(task =>
-          <Task task={task} />
+        {Object.keys(this.props.tasks).map(title =>
+          <Task task={this.props.tasks[title]} />
         )}
       </form>
     );

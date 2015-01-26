@@ -1,5 +1,5 @@
 var React = require('react');
-var ActionCreator = require('../actions/DataActionCreators');
+var ActionCreator = require('../actions/ActionCreators');
 var Task = require('./Task.jsx');
 var ListGroup = require('react-bootstrap/ListGroup');
 var Alert = require('react-bootstrap/Alert');
@@ -7,7 +7,7 @@ var Alert = require('react-bootstrap/Alert');
 var TaskList = React.createClass({
   getDefaultProps: function() {
     return {
-      tasks: []
+      tasks: {}
     };
   },
 
@@ -23,8 +23,8 @@ var TaskList = React.createClass({
     return (
       <form>
         <ListGroup>
-          {this.props.tasks.map(task =>
-            <Task task={task} />
+          {Object.keys(this.props.tasks).map(title =>
+            <Task task={this.props.tasks[title]} />
           )}
         </ListGroup>
       </form>

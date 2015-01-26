@@ -4,20 +4,18 @@ var Constants = require('../constants/AppConstants');
 var assign = require('object-assign');
 
 // data storage
-var _data = [];
+var _data = {};
 
 // add private functions to modify data
 function addItem(title, completed=false) {
-  _data.push({title, completed});
+  _data[title] = {title, completed};
 }
 
 var <%= name %> = assign(EventEmitter.prototype, {
 
   // public methods used by Controller-View to operate on data
   getAll: function() {
-    return {
-      tasks: _data
-    };
+    return _data;
   },
 
 

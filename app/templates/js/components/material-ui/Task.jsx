@@ -1,5 +1,5 @@
 var React = require('react');
-var ActionCreator = require('../actions/DataActionCreators');
+var ActionCreator = require('../actions/ActionCreators');
 var mui = require('material-ui'),
     Checkbox = mui.Checkbox;
 

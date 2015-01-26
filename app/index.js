@@ -106,6 +106,12 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.npmInstall(['gulp-connect'], { 'saveDev': true });
   },
 
+  testing: function() {
+    this.npmInstall(['jest-cli', '6to5-jest'], { saveDev: true });
+    this.mkdir('src/js/stores/__tests__');
+    this.mkdir('src/js/components/__tests__');
+  },
+
   transpilation: function() {
     this.npmInstall(['6to5ify'], { 'saveDev': true })
   },
@@ -119,8 +125,8 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('gitignore', '.gitignore');
     this.copy('jshintrc', '.jshintrc');
     this.composeWith('flux:dispatcher', {args: ['AppDispatcher']});
-    this.composeWith('flux:store', {args: ['DataStore']});
-    this.composeWith('flux:action', {args: ['DataActionCreators']});
+    this.composeWith('flux:store', {args: ['TodoStore']});
+    this.composeWith('flux:action', {args: ['ActionCreators']});
   }
 });
 
