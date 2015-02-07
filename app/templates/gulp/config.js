@@ -1,4 +1,4 @@
-var dest = "./dist";
+var dest = './dist';
 var src = './src';
 
 module.exports = {
@@ -13,8 +13,8 @@ module.exports = {
     }
   },
   sass: {
-    src: src + "/styles/**/*.{sass,scss,css}",
-    dest: dest + "/styles",
+    src: src + '/styles/**/*.{sass,scss,css}',
+    dest: dest + '/styles',
     settings: {
       indentedSyntax: false, // Enable .sass syntax?
       imagePath: '/images' // Used by the image-url helper
