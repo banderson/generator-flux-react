@@ -42,7 +42,7 @@ var <%= name %> = assign(EventEmitter.prototype, {
       case Constants.ActionTypes.ADD_TASK:
         var text = action.text.trim();
         // NOTE: if this action needs to wait on another store:
-        // <%= name %>.waitFor([OtherStore.dispatchToken]);
+        // AppDispatcher.waitFor([OtherStore.dispatchToken]);
         // For details, see: http://facebook.github.io/react/blog/2014/07/30/flux-actions-and-the-dispatcher.html#why-we-need-a-dispatcher
         if (text !== '') {
           addItem(text);
