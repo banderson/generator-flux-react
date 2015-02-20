@@ -15,7 +15,7 @@ It's an "Application Architecture for Building User Interfaces", built by the te
 - [x] Facebook's Flux architecture (using official [dispatcher](https://github.com/facebook/flux/blob/master/src/Dispatcher.js))
 - [x] [Gulp](http://gulpjs.com/) for builds
 - [x] [Browserify](http://browserify.org/) and CJS modules
-- [x] [6to5](https://6to5.org/) for es6 transpilation
+- [x] [Babel](https://babeljs.io/) for es6 transpilation
 - [x] Static server with livereload
 - [x] SASS CSS preprocessor
 

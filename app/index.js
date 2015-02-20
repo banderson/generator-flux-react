@@ -107,13 +107,13 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   testing: function() {
-    this.npmInstall(['jest-cli', '6to5-jest'], { saveDev: true });
+    this.npmInstall(['jest-cli', 'babel-jest'], { saveDev: true });
     this.mkdir('src/js/stores/__tests__');
     this.mkdir('src/js/components/__tests__');
   },
 
   transpilation: function() {
-    this.npmInstall(['6to5ify'], { 'saveDev': true })
+    this.npmInstall(['babelify'], { 'saveDev': true })
   },
 
   styles: function() {
