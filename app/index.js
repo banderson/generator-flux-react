@@ -107,7 +107,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   transpilation: function() {
-    this.npmInstall(['6to5ify'], { 'saveDev': true })
+    this.npmInstall(['babelify'], { 'saveDev': true })
   },
 
   styles: function() {
