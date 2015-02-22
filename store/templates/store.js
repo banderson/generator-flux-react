@@ -11,7 +11,8 @@ function addItem(title, completed=false) {
   _data.push({title, completed});
 }
 
-var <%= name %> = assign(EventEmitter.prototype, {
+// Facebook style store creation.
+var <%= name %> = assign({}, EventEmitter.prototype, {
 
   // public methods used by Controller-View to operate on data
   getAll: function() {
