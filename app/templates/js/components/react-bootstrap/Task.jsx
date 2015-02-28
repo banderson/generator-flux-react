@@ -1,7 +1,7 @@
 var React = require('react');
 var ActionCreator = require('../actions/DataActionCreators');
-var ListGroupItem = require('react-bootstrap/ListGroupItem');
-var Input = require('react-bootstrap/Input');
+var ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
+var Input = require('react-bootstrap/lib/Input');
 
 var Task = React.createClass({
   getDefaultProps: function() {
