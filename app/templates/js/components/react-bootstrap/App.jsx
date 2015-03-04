@@ -1,8 +1,8 @@
 var React = require('react');
 var DataStore = require('../stores/DataStore');
 var ActionCreator = require('../actions/DataActionCreators');
-var Button = require('react-bootstrap/Button');
-var Jumbotron = require('react-bootstrap/Jumbotron');
+var Button = require('react-bootstrap/lib/Button');
+var Jumbotron = require('react-bootstrap/lib/Jumbotron');
 var TaskList = require('./TaskList.jsx');
 
 var App = React.createClass({
