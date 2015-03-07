@@ -1,17 +1,18 @@
-var React = require('react');
-var Task = require('./Task.jsx');
+const React = require('react');
+const Task = require('./Task.jsx');
 
-var TaskList = React.createClass({
-  getDefaultProps: function() {
+let TaskList = React.createClass({
+  getDefaultProps() {
     return {
       tasks: []
     };
   },
 
-  render: function() {
+  render() {
+    let {tasks} = this.props;
     return (
       <ul>
-        {this.props.tasks.map(task =>
+        {tasks.map(task =>
           <Task task={task} />
         )}
       </ul>

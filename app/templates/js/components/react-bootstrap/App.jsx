@@ -1,42 +1,43 @@
-var React = require('react');
-var <%= defaultStore %> = require('../stores/<%= defaultStore %>');
-var ActionCreator = require('../actions/<%= defaultActionCreator %>');
-var Button = require('react-bootstrap/lib/Button');
-var Jumbotron = require('react-bootstrap/lib/Jumbotron');
-var TaskList = require('./TaskList.jsx');
+const React = require('react');
+const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
+const ActionCreator = require('../actions/<%= defaultActionCreator %>');
+const Button = require('react-bootstrap/lib/Button');
+const Jumbotron = require('react-bootstrap/lib/Jumbotron');
+const TaskList = require('./TaskList.jsx');
 
-var App = React.createClass({
+let App = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       tasks: []
     }
   },
 
-  _onChange: function() {
+  _onChange() {
     this.setState(<%= defaultStore %>.getAll());
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     <%= defaultStore %>.addChangeListener(this._onChange);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     <%= defaultStore %>.removeChangeListener(this._onChange);
   },
 
-  handleAddNewClick: function(e) {
-    var title = prompt('Enter task title:');
+  handleAddNewClick(e) {
+    let title = prompt('Enter task title:');
     if (title) {
       ActionCreator.addItem(title);
     }
   },
 
-  handleClearListClick: function(e) {
+  handleClearListClick(e) {
     ActionCreator.clearList();
   },
 
-  render: function() {
+  render() {
+    let {tasks} = this.state;
     return (
       <div className="container">
         <Jumbotron>
@@ -47,7 +48,7 @@ var App = React.createClass({
           </p>
         </Jumbotron>
 
-        <TaskList tasks={this.state.tasks} />
+        <TaskList tasks={tasks} />
 
         <Button onClick={this.handleAddNewClick} bsStyle="primary">Add New</Button>
         <Button onClick={this.handleClearListClick} bsStyle="danger">Clear List</Button>

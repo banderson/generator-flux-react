@@ -1,10 +1,10 @@
-var React = require('react');
-var ActionCreator = require('../actions/<%= defaultActionCreator %>');
-var ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
-var Input = require('react-bootstrap/lib/Input');
+const React = require('react');
+const ActionCreator = require('../actions/<%= defaultActionCreator %>');
+const ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
+const Input = require('react-bootstrap/lib/Input');
 
-var Task = React.createClass({
-  getDefaultProps: function() {
+let Task = React.createClass({
+  getDefaultProps() {
     return {
       task: {
         title: '',
@@ -13,14 +13,14 @@ var Task = React.createClass({
     };
   },
 
-  handleToggle: function(task) {
+  handleToggle(task) {
     if (this.refs.checkbox.getDOMNode().checked) {
       ActionCreator.completeTask(task);
     }
   },
 
-  render: function() {
-    var task = this.props.task;
+  render() {
+    let {task} = this.props;
     return (
       <ListGroupItem>
         <Input type="checkbox" ref="checkbox" checked={task.completed}

@@ -1,19 +1,20 @@
-var React = require('react');
-var Task = require('./Task.jsx');
-var mui = require('material-ui'),
+const React = require('react');
+const Task = require('./Task.jsx');
+const mui = require('material-ui'),
     Paper = mui.Paper;
 
-var TaskList = React.createClass({
-  getDefaultProps: function() {
+let TaskList = React.createClass({
+  getDefaultProps() {
     return {
       tasks: []
     };
   },
 
-  render: function() {
+  render() {
+    let {tasks} = this.props;
     return (
       <form id="task-list">
-        {this.props.tasks.map(task =>
+        {tasks.map(task =>
           <Task task={task} />
         )}
       </form>

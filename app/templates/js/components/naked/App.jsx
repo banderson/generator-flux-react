@@ -1,45 +1,46 @@
-var React = require('react');
-var <%= defaultStore %> = require('../stores/<%= defaultStore %>');
-var ActionCreator = require('../actions/<%= defaultActionCreator %>');
-var TaskList = require('./TaskList.jsx');
+const React = require('react');
+const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
+const ActionCreator = require('../actions/<%= defaultActionCreator %>');
+const TaskList = require('./TaskList.jsx');
 
-var App = React.createClass({
+let App = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       tasks: []
     }
   },
 
-  _onChange: function() {
+  _onChange() {
     this.setState(<%= defaultStore %>.getAll());
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     <%= defaultStore %>.addChangeListener(this._onChange);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount() {
     <%= defaultStore %>.removeChangeListener(this._onChange);
   },
 
-  handleAddNewClick: function(e) {
-    var title = prompt('Enter task title:');
+  handleAddNewClick(e) {
+    let title = prompt('Enter task title:');
     if (title) {
       ActionCreator.addItem(title);
     }
   },
 
-  handleClearListClick: function(e) {
+  handleClearListClick(e) {
     ActionCreator.clearList();
   },
 
-  render: function() {
+  render() {
+    let {tasks} = this.state;
     return (
       <div>
         <h1>Learn Flux</h1>
 
-        <TaskList tasks={this.state.tasks} />
+        <TaskList tasks={tasks} />
 
         <button onClick={this.handleAddNewClick}>Add New</button>
         <button onClick={this.handleClearListClick}>Clear List</button>

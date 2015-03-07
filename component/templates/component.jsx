@@ -1,14 +1,14 @@
-var React = require('react');
+const React = require('react');
 
-var <%= name %> = React.createClass({
-  getInitialState: function() {
+let <%= name %> = React.createClass({
+  getInitialState() {
     return {};
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
   },
 
-  render: function() {
+  render() {
     return (
       <p>Hello, world!</p>
     );

@@ -1,17 +1,19 @@
-var React = require('react');
-var Task = require('./Task.jsx');
-var ListGroup = require('react-bootstrap/lib/ListGroup');
-var Alert = require('react-bootstrap/lib/Alert');
+const React = require('react');
+const Task = require('./Task.jsx');
+const ListGroup = require('react-bootstrap/lib/ListGroup');
+const Alert = require('react-bootstrap/lib/Alert');
 
-var TaskList = React.createClass({
-  getDefaultProps: function() {
+let TaskList = React.createClass({
+  getDefaultProps() {
     return {
       tasks: []
     };
   },
 
-  render: function() {
-    if (this.props.tasks.length === 0) {
+  render() {
+    let {tasks} = this.props;
+
+    if (tasks.length === 0) {
       return (
         <Alert bsStyle="warning">
           <strong>You have no tasks</strong> Create some using the Add New button below.
@@ -22,7 +24,7 @@ var TaskList = React.createClass({
     return (
       <form>
         <ListGroup>
-          {this.props.tasks.map(task =>
+          {tasks.map(task =>
             <Task task={task} />
           )}
         </ListGroup>

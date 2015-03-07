@@ -1,8 +1,8 @@
-var React = require('react');
-var ActionCreator = require('../actions/<%= defaultActionCreator %>');
+const React = require('react');
+const ActionCreator = require('../actions/<%= defaultActionCreator %>');
 
-var Task = React.createClass({
-  getDefaultProps: function() {
+let Task = React.createClass({
+  getDefaultProps() {
     return {
       task: {
         title: '',
@@ -11,14 +11,14 @@ var Task = React.createClass({
     };
   },
 
-  handleToggle: function(task) {
+  handleToggle(task) {
     if (this.refs.checkbox.getDOMNode().checked) {
       ActionCreator.completeTask(task);
     }
   },
 
-  render: function() {
-    var task = this.props.task;
+  render() {
+    let {task} = this.props;
     return (
       <li className="task">
         <input type="checkbox" ref="checkbox" checked={task.completed}
