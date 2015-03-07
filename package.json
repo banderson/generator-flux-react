@@ -1,6 +1,6 @@
 {
   "name": "generator-flux",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A yeoman generator for app based on Facebook's Flux/React architecture",
   "main": "app/index.js",
   "repository": "banderson/generator-flux-react",
