@@ -2,8 +2,9 @@ const React = require('react');
 const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
 const ActionCreator = require('../actions/<%= defaultActionCreator %>');
 const TaskList = require('./TaskList.jsx');
-const mui = require('material-ui'),
-    RaisedButton = mui.RaisedButton;
+const mui = require('material-ui');
+
+let {RaisedButton} = mui;
 
 let App = React.createClass({
 

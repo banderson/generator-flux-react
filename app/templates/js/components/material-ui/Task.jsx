@@ -1,7 +1,8 @@
 const React = require('react');
 const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const mui = require('material-ui'),
-    Checkbox = mui.Checkbox;
+const mui = require('material-ui');
+
+let {Checkbox} = mui;
 
 let Task = React.createClass({
   getDefaultProps() {

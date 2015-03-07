@@ -1,7 +1,8 @@
 const React = require('react');
 const Task = require('./Task.jsx');
-const mui = require('material-ui'),
-    Paper = mui.Paper;
+const mui = require('material-ui');
+
+let {Paper} = mui;
 
 let TaskList = React.createClass({
   getDefaultProps() {
