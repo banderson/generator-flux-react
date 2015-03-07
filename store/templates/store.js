@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatchers/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
+var BaseStore = require('./BaseStore');
 var assign = require('object-assign');
 
 // data storage
@@ -12,7 +12,7 @@ function addItem(title, completed=false) {
 }
 
 // Facebook style store creation.
-var <%= name %> = assign({}, EventEmitter.prototype, {
+var <%= name %> = assign({}, BaseStore, {
 
   // public methods used by Controller-View to operate on data
   getAll: function() {
@@ -20,20 +20,6 @@ var <%= name %> = assign({}, EventEmitter.prototype, {
       tasks: _data
     };
   },
-
-
-  // Allow Controller-View to register itself with store
-  addChangeListener: function(callback) {
-    this.on(Constants.CHANGE_EVENT, callback);
-  },
-  removeChangeListener: function(callback) {
-    this.removeListener(Constants.CHANGE_EVENT, callback);
-  },
-  // triggers change listener above, firing controller-view callback
-  emitChange: function() {
-    this.emit(Constants.CHANGE_EVENT);
-  },
-
 
   // register store with dispatcher, allowing actions to flow through
   dispatcherIndex: AppDispatcher.register(function(payload) {
