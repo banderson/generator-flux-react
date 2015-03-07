@@ -1,5 +1,4 @@
 var React = require('react');
-var ActionCreator = require('../actions/DataActionCreators');
 var Task = require('./Task.jsx');
 var mui = require('material-ui'),
     Paper = mui.Paper;

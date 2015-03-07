@@ -1,5 +1,5 @@
 var React = require('react');
-var ActionCreator = require('../actions/DataActionCreators');
+var ActionCreator = require('../actions/<%= defaultActionCreator %>');
 var ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
 var Input = require('react-bootstrap/lib/Input');
 

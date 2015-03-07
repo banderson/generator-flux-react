@@ -57,6 +57,9 @@ var FluxGenerator = yeoman.generators.Base.extend({
       this.uiChoice = props.ui;
       done();
     }.bind(this));
+
+    this.defaultStore = 'TodoStore';
+    this.defaultActionCreator = 'TodoActionCreators';
   },
 
   app: function () {
@@ -119,8 +122,8 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('gitignore', '.gitignore');
     this.copy('jshintrc', '.jshintrc');
     this.composeWith('flux:dispatcher', {args: ['AppDispatcher']});
-    this.composeWith('flux:store', {args: ['DataStore']});
-    this.composeWith('flux:action', {args: ['DataActionCreators']});
+    this.composeWith('flux:store', {args: [this.defaultStore]});
+    this.composeWith('flux:action', {args: [this.defaultActionCreator]});
   }
 });
 

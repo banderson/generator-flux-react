@@ -1,27 +1,26 @@
 var React = require('react');
-var DataStore = require('../stores/DataStore');
-var ActionCreator = require('../actions/DataActionCreators');
+var <%= defaultStore %> = require('../stores/<%= defaultStore %>');
+var ActionCreator = require('../actions/<%= defaultActionCreator %>');
 var TaskList = require('./TaskList.jsx');
 
 var App = React.createClass({
 
   getInitialState: function() {
-    var data = DataStore.getAll();
     return {
       tasks: []
     }
   },
 
   _onChange: function() {
-    this.setState(DataStore.getAll());
+    this.setState(<%= defaultStore %>.getAll());
   },
 
   componentDidMount: function() {
-    DataStore.addChangeListener(this._onChange);
+    <%= defaultStore %>.addChangeListener(this._onChange);
   },
 
   componentWillUnmount: function() {
-    DataStore.removeChangeListener(this._onChange);
+    <%= defaultStore %>.removeChangeListener(this._onChange);
   },
 
   handleAddNewClick: function(e) {
