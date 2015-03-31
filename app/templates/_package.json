@@ -9,6 +9,7 @@
   },
 
   "scripts": {
+    "dev": "gulp --type dev",
     "start": "gulp",
     "build": "gulp build"
   },
