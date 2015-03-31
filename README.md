@@ -69,6 +69,12 @@ The generated project includes a live-reloading static server on port `8080` (yo
 $ npm start
 ```
 
+To run the live-reloading static server on port `8080` with source maps enabled (don't use source maps for production!), run: 
+
+```bash
+$ npm run dev
+```
+
 If you prefer to just build without the live reload and build-on-each-change watcher, run:
 
 ```bash
