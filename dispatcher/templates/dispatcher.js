@@ -1,5 +1,5 @@
 import {Dispatcher} from 'flux';
-import Constants from '../constants/AppConstants';
+import Constants from '../AppConstants';
 import assign from 'object-assign';
 
 export default assign(new Dispatcher(), {
