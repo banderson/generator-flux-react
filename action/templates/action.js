@@ -1,9 +1,9 @@
-import AppDispatcher from '../dispatchers/AppDispatcher';
+import Dispatcher from '../Dispatcher';
 import Constants from '../AppConstants';
 
 export default {
   addItem(text) {
-    AppDispatcher.handleViewAction({
+    Dispatcher.handleViewAction({
       type: Constants.ActionTypes.ADD_TASK,
       text: text
     });

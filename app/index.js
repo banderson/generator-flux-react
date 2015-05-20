@@ -64,12 +64,12 @@ var FluxGenerator = yeoman.generators.Base.extend({
 
   app: function () {
     this.mkdir('src/js/components');
-    this.mkdir('src/js/dispatchers');
     this.mkdir('src/js/stores');
     this.mkdir('src/js/actions');
     this.copy('js/index.jsx', 'src/js/index.jsx');
     this.copy('_index.html', 'src/index.html');
     this.copy('js/constants.js', 'src/js/AppConstants.js');
+    this.copy('js/dispatcher.js', 'src/js/Dispatcher.js');
 
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
@@ -120,7 +120,6 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');
     this.copy('jshintrc', '.jshintrc');
-    this.composeWith('flux:dispatcher', {args: ['AppDispatcher']});
     this.composeWith('flux:store', {args: [this.defaultStore]});
     this.composeWith('flux:action', {args: [this.defaultActionCreator]});
   }
