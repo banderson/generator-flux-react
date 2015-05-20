@@ -12,7 +12,7 @@ function addItem(title, completed=false) {
 }
 
 // Facebook style store creation.
-export default assign({}, BaseStore, {
+const <%= name %> = assign({}, BaseStore, {
   // public methods used by Controller-View to operate on data
   getAll() {
     return {
@@ -40,3 +40,5 @@ export default assign({}, BaseStore, {
     }
   })
 });
+
+export default <%= name %>;
