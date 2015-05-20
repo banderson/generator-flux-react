@@ -1,6 +1,7 @@
 import React from 'react';
 import <%= defaultStore %> from '../stores/<%= defaultStore %>';
 import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import App from './App.jsx';
 
 export default React.createClass({
   _onChange() {
@@ -12,11 +13,11 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    <%= defaultStore %>.addChangeListener(_onChange);
+    <%= defaultStore %>.addChangeListener(this._onChange);
   },
 
   componentWillUnmount() {
-    <%= defaultStore %>.removeChangeListener(_onChange);
+    <%= defaultStore %>.removeChangeListener(this._onChange);
   },
 
   handleAddTask(e) {
