@@ -1,9 +1,8 @@
-const Dispatcher = require('flux').Dispatcher;
-const Constants = require('../constants/AppConstants');
-const assign = require('object-assign');
+import {Dispatcher} from 'flux';
+import Constants from '../constants/AppConstants';
+import assign from 'object-assign';
 
-let <%= name %> = assign(new Dispatcher(), {
-
+export default assign(new Dispatcher(), {
   handleServerAction(action) {
     let payload = {
       source: Constants.ActionSources.SERVER_ACTION,
@@ -19,7 +18,4 @@ let <%= name %> = assign(new Dispatcher(), {
     };
     this.dispatch(payload);
   }
-
 });
-
-module.exports = <%= name %>;

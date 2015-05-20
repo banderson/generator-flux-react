@@ -1,10 +1,8 @@
-const React = require('react');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const mui = require('material-ui');
+import React from 'react';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import {Checkbox} from 'material-ui';
 
-let {Checkbox} = mui;
-
-let Task = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       task: {
@@ -31,5 +29,3 @@ let Task = React.createClass({
     );
   }
 });
-
-module.exports = Task;

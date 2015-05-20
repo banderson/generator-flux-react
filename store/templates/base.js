@@ -1,10 +1,9 @@
-const assign = require('object-assign');
-const EventEmitter = require('events').EventEmitter;
+import assign from 'object-assign';
+import {EventEmitter} from 'events';
 
 const CHANGE_EVENT = 'change';
 
-module.exports = assign({}, EventEmitter.prototype, {
-
+export default assign({}, EventEmitter.prototype, {
   // Allow Controller-View to register itself with store
   addChangeListener(callback) {
     this.on(CHANGE_EVENT, callback);

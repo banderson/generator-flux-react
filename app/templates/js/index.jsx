@@ -1,4 +1,4 @@
-const React = require('react');
-const App = require('./components/App.jsx');
+import React from 'react';
+import App from './components/App.jsx';
 
 React.render(<App />, document.getElementById('main'));

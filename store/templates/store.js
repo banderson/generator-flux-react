@@ -1,7 +1,7 @@
-const AppDispatcher = require('../dispatchers/AppDispatcher');
-const Constants = require('../constants/AppConstants');
-const BaseStore = require('./BaseStore');
-const assign = require('object-assign');
+import AppDispatcher from '../dispatchers/AppDispatcher';
+import Constants from '../constants/AppConstants';
+import BaseStore from './BaseStore';
+import assign from 'object-assign';
 
 // data storage
 let _data = [];
@@ -12,8 +12,7 @@ function addItem(title, completed=false) {
 }
 
 // Facebook style store creation.
-let <%= name %> = assign({}, BaseStore, {
-
+export default assign({}, BaseStore, {
   // public methods used by Controller-View to operate on data
   getAll() {
     return {
@@ -40,7 +39,4 @@ let <%= name %> = assign({}, BaseStore, {
       // add more cases for other actionTypes...
     }
   })
-
 });
-
-module.exports = <%= name %>;

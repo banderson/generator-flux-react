@@ -1,9 +1,9 @@
-const React = require('react');
-const Task = require('./Task.jsx');
-const ListGroup = require('react-bootstrap/lib/ListGroup');
-const Alert = require('react-bootstrap/lib/Alert');
+import React from 'react';
+import Task from './Task.jsx';
+import ListGroup from 'react-bootstrap/lib/ListGroup';
+import Alert from 'react-bootstrap/lib/Alert';
 
-let TaskList = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       tasks: []
@@ -32,5 +32,3 @@ let TaskList = React.createClass({
     );
   }
 });
-
-module.exports = TaskList;

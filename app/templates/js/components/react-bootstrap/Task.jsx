@@ -1,9 +1,9 @@
-const React = require('react');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const ListGroupItem = require('react-bootstrap/lib/ListGroupItem');
-const Input = require('react-bootstrap/lib/Input');
+import React from 'react';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
+import Input from 'react-bootstrap/lib/Input';
 
-let Task = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       task: {
@@ -29,5 +29,3 @@ let Task = React.createClass({
     );
   }
 });
-
-module.exports = Task;

@@ -1,12 +1,11 @@
-const React = require('react');
-const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const Button = require('react-bootstrap/lib/Button');
-const Jumbotron = require('react-bootstrap/lib/Jumbotron');
-const TaskList = require('./TaskList.jsx');
+import React from 'react';
+import <%= defaultStore %> from '../stores/<%= defaultStore %>';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import Button from 'react-bootstrap/lib/Button';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
+import TaskList from './TaskList.jsx';
 
-let App = React.createClass({
-
+export default React.createClass({
   getInitialState() {
     return {
       tasks: []
@@ -55,7 +54,4 @@ let App = React.createClass({
       </div>
     );
   }
-
 });
-
-module.exports = App;

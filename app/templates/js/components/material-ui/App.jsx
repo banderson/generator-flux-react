@@ -1,13 +1,10 @@
-const React = require('react');
-const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const TaskList = require('./TaskList.jsx');
-const mui = require('material-ui');
+import React from 'react';
+import <%= defaultStore %> from '../stores/<%= defaultStore %>';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import TaskList from './TaskList.jsx';
+import {RaisedButton} from 'material-ui';
 
-let {RaisedButton} = mui;
-
-let App = React.createClass({
-
+export default React.createClass({
   getInitialState() {
     return {
       tasks: []
@@ -54,7 +51,4 @@ let App = React.createClass({
       </div>
     );
   }
-
 });
-
-module.exports = App;
