@@ -1,5 +1,5 @@
 import assign from 'object-assign';
-import Constants from '../AppConstants';
+import Constants from '../Constants';
 import {EventEmitter} from 'events';
 
 export default assign({}, EventEmitter.prototype, {

@@ -1,5 +1,5 @@
 import Dispatcher from '../Dispatcher';
-import Constants from '../AppConstants';
+import Constants from '../Constants';
 import BaseStore from './BaseStore';
 import assign from 'object-assign';
 
