@@ -13,7 +13,7 @@ export default React.createClass({
   },
 
   handleToggle(task) {
-    if (this.refs.checkbox.getDOMNode().checked) {
+    if (this.refs.checkbox.isChecked()) {
       ActionCreator.completeTask(task);
     }
   },
@@ -23,7 +23,7 @@ export default React.createClass({
     return (
       <label>
         <Checkbox name="checkboxName" ref="checkbox" checked={task.completed}
-          onChange={this.handleToggle.bind(this, task)} value="on" />
+          onCheck={this.handleToggle.bind(this, task)} value="on" />
         <span className="checkbox-label">{task.title}</span>
       </label>
     );
