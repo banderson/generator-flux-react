@@ -1,7 +1,7 @@
-const React = require('react');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
+import React from 'react';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
 
-let Task = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       task: {
@@ -28,5 +28,3 @@ let Task = React.createClass({
     );
   }
 });
-
-module.exports = Task;

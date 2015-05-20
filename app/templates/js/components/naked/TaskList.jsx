@@ -1,7 +1,7 @@
-const React = require('react');
-const Task = require('./Task.jsx');
+import React from 'react';
+import Task from './Task.jsx';
 
-let TaskList = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       tasks: []
@@ -19,5 +19,3 @@ let TaskList = React.createClass({
     );
   }
 });
-
-module.exports = TaskList;

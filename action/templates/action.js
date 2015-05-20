@@ -1,21 +1,19 @@
-var AppDispatcher = require('../dispatchers/AppDispatcher');
-var Constants = require('../constants/AppConstants');
+import AppDispatcher from '../dispatchers/AppDispatcher';
+import Constants from '../constants/AppConstants';
 
-module.exports = {
-
-  addItem: function(text) {
+export default {
+  addItem(text) {
     AppDispatcher.handleViewAction({
       type: Constants.ActionTypes.ADD_TASK,
       text: text
     });
   },
 
-  clearList: function() {
+  clearList() {
     console.warn('clearList action not yet implemented...');
   },
 
-  completeTask: function(task) {
+  completeTask(task) {
     console.warn('completeTask action not yet implemented...');
   }
-
 };

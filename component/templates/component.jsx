@@ -1,6 +1,6 @@
-const React = require('react');
+import React from 'react';
 
-let <%= name %> = React.createClass({
+export default React.createClass({
   getInitialState() {
     return {};
   },
@@ -14,5 +14,3 @@ let <%= name %> = React.createClass({
     );
   }
 });
-
-module.exports = <%= name %>;

@@ -1,7 +1,6 @@
-const keyMirror = require('react/lib/keyMirror');
+import keyMirror from 'react/lib/keyMirror';
 
-module.exports = {
-
+export default {
   ActionTypes: keyMirror({
     ADD_TASK: null
   }),
@@ -10,5 +9,4 @@ module.exports = {
     SERVER_ACTION: null,
     VIEW_ACTION: null
   })
-
 };

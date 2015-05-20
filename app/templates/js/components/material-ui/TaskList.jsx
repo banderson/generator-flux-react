@@ -1,10 +1,8 @@
-const React = require('react');
-const Task = require('./Task.jsx');
-const mui = require('material-ui');
+import React from 'react';
+import Task from './Task.jsx';
+import {Paper} from 'material-ui';
 
-let {Paper} = mui;
-
-let TaskList = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       tasks: []
@@ -22,5 +20,3 @@ let TaskList = React.createClass({
     );
   }
 });
-
-module.exports = TaskList;

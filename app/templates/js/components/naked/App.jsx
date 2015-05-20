@@ -1,14 +1,13 @@
-const React = require('react');
-const <%= defaultStore %> = require('../stores/<%= defaultStore %>');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const TaskList = require('./TaskList.jsx');
+import React from 'react';
+import <%= defaultStore %> from '../stores/<%= defaultStore %>';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import TaskList from './TaskList.jsx';
 
-let App = React.createClass({
-
+export default React.createClass({
   getInitialState() {
     return {
       tasks: []
-    }
+    };
   },
 
   _onChange() {
@@ -47,7 +46,4 @@ let App = React.createClass({
       </div>
     );
   }
-
 });
-
-module.exports = App;

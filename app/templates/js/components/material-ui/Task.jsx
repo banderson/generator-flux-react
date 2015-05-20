@@ -1,10 +1,8 @@
-const React = require('react');
-const ActionCreator = require('../actions/<%= defaultActionCreator %>');
-const mui = require('material-ui');
+import React from 'react';
+import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import {Checkbox} from 'material-ui';
 
-let {Checkbox} = mui;
-
-let Task = React.createClass({
+export default React.createClass({
   getDefaultProps() {
     return {
       task: {
@@ -15,7 +13,7 @@ let Task = React.createClass({
   },
 
   handleToggle(task) {
-    if (this.refs.checkbox.getDOMNode().checked) {
+    if (this.refs.checkbox.isChecked()) {
       ActionCreator.completeTask(task);
     }
   },
@@ -23,13 +21,8 @@ let Task = React.createClass({
   render() {
     let {task} = this.props;
     return (
-      <label>
-        <Checkbox name="checkboxName" ref="checkbox" checked={task.completed}
-          onChange={this.handleToggle.bind(this, task)} value="on" />
-        <span className="checkbox-label">{task.title}</span>
-      </label>
+      <Checkbox name="checkboxName" ref="checkbox" checked={task.completed}
+        onCheck={this.handleToggle.bind(this, task)} value="on" label={task.title} />
     );
   }
 });
-
-module.exports = Task;
