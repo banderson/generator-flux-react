@@ -21,11 +21,8 @@ export default React.createClass({
   render() {
     let {task} = this.props;
     return (
-      <label>
-        <Checkbox name="checkboxName" ref="checkbox" checked={task.completed}
-          onCheck={this.handleToggle.bind(this, task)} value="on" />
-        <span className="checkbox-label">{task.title}</span>
-      </label>
+      <Checkbox name="checkboxName" ref="checkbox" defaultChecked={task.completed}
+        onCheck={this.handleToggle.bind(this, task)} value="on" label={task.title} />
     );
   }
 });
