@@ -1,4 +1,4 @@
 import React from 'react';
-import App from './components/App.jsx';
+import AppContainer from './components/AppContainer.jsx';
 
-React.render(<App />, document.getElementById('main'));
+React.render(<AppContainer />, document.getElementById('main'));

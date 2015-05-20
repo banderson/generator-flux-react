@@ -1,41 +1,22 @@
-import React from 'react';
-import <%= defaultStore %> from '../stores/<%= defaultStore %>';
-import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import React, {PropTypes} from 'react';
 import TaskList from './TaskList.jsx';
 import {RaisedButton} from 'material-ui';
 
 export default React.createClass({
-  getInitialState() {
+  propTypes: {
+    tasks: PropTypes.array.isRequired,
+    onAddTask: PropTypes.func.isRequired,
+    onClear: PropTypes.func.isRequired
+  },
+
+  getDefaultProps() {
     return {
       tasks: []
     }
   },
 
-  _onChange() {
-    this.setState(<%= defaultStore %>.getAll());
-  },
-
-  componentDidMount() {
-    <%= defaultStore %>.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount() {
-    <%= defaultStore %>.removeChangeListener(this._onChange);
-  },
-
-  handleAddNewClick(e) {
-    let title = prompt('Enter task title:');
-    if (title) {
-      ActionCreator.addItem(title);
-    }
-  },
-
-  handleClearListClick(e) {
-    ActionCreator.clearList();
-  },
-
   render() {
-    let {tasks} = this.state;
+    let {onAddTask, onClear, tasks} = this.props;
     return (
       <div className="example-page">
         <h1>Learning Flux</h1>
@@ -46,8 +27,8 @@ export default React.createClass({
 
         <TaskList tasks={tasks} />
 
-        <RaisedButton label="Add Task" primary={true} onClick={this.handleAddNewClick} />
-        <RaisedButton label="Clear List" secondary={true} onClick={this.handleClearListClick} />
+        <RaisedButton label="Add Task" primary={true} onClick={onAddTask} />
+        <RaisedButton label="Clear List" secondary={true} onClick={onClear} />
       </div>
     );
   }

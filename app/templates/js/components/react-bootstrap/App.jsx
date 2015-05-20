@@ -1,42 +1,23 @@
-import React from 'react';
-import <%= defaultStore %> from '../stores/<%= defaultStore %>';
-import ActionCreator from '../actions/<%= defaultActionCreator %>';
+import React, {PropTypes} from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 import TaskList from './TaskList.jsx';
 
 export default React.createClass({
-  getInitialState() {
+  propTypes: {
+    tasks: PropTypes.array.isRequired,
+    onAddTask: PropTypes.func.isRequired,
+    onClear: PropTypes.func.isRequired
+  },
+
+  getDefaultProps() {
     return {
       tasks: []
     }
   },
 
-  _onChange() {
-    this.setState(<%= defaultStore %>.getAll());
-  },
-
-  componentDidMount() {
-    <%= defaultStore %>.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount() {
-    <%= defaultStore %>.removeChangeListener(this._onChange);
-  },
-
-  handleAddNewClick(e) {
-    let title = prompt('Enter task title:');
-    if (title) {
-      ActionCreator.addItem(title);
-    }
-  },
-
-  handleClearListClick(e) {
-    ActionCreator.clearList();
-  },
-
   render() {
-    let {tasks} = this.state;
+    let {onAddTask, onClear, tasks} = this.props;
     return (
       <div className="container">
         <Jumbotron>
@@ -49,8 +30,8 @@ export default React.createClass({
 
         <TaskList tasks={tasks} />
 
-        <Button onClick={this.handleAddNewClick} bsStyle="primary">Add New</Button>
-        <Button onClick={this.handleClearListClick} bsStyle="danger">Clear List</Button>
+        <Button onClick={onAddTask} bsStyle="primary">Add New</Button>
+        <Button onClick={onClear} bsStyle="danger">Clear List</Button>
       </div>
     );
   }
