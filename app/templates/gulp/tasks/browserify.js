@@ -7,8 +7,7 @@ var watchify = require('watchify');
 var connect = require('gulp-connect');
 var config = require('../config').browserify;
 
-var b = browserify({ cache: {}, packageCache: {}, debug: config.debug });
-b.add(config.src);
+var b = browserify(config.src, { cache: {}, packageCache: {}, debug: config.debug });
 config.settings.transform.forEach(function(t) {
   b.transform(t);
 });
