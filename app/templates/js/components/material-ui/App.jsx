@@ -1,6 +1,8 @@
 import React, {PropTypes} from 'react';
 import TaskList from './TaskList.jsx';
-import {RaisedButton} from 'material-ui';
+import {AppCanvas, RaisedButton, Styles} from 'material-ui';
+
+const ThemeManager = new Styles.ThemeManager();
 
 export default React.createClass({
   propTypes: {
@@ -13,6 +15,16 @@ export default React.createClass({
     return {
       tasks: []
     }
+  },
+
+  childContextTypes: {
+    muiTheme: React.PropTypes.object
+  },
+
+  getChildContext() {
+    return {
+      muiTheme: ThemeManager.getCurrentTheme()
+    };
   },
 
   render() {
