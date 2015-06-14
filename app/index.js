@@ -78,7 +78,10 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   npm: function() {
-    this.npmInstall(['react', 'flux', 'object-assign'], { save: true });
+    this.npmInstall([
+      'react', 'flux', 'object-assign', 'eslint',
+      'babel-eslint', 'eslint-plugin-react'
+    ], { save: true });
   },
 
   gulp: function() {
@@ -120,7 +123,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');
-    this.copy('jshintrc', '.jshintrc');
+    this.copy('eslintrc', '.eslintrc');
     this.composeWith('flux:store', {args: [this.defaultStore]});
     this.composeWith('flux:action', {args: [this.defaultActionCreator]});
   }
