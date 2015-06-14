@@ -4,7 +4,7 @@ import Constants from '../Constants';
 export default {
   addItem(text) {
     Dispatcher.handleViewAction({
-      type: Constants.ActionTypes.ADD_TASK,
+      type: Constants.ActionTypes.TASK_ADDED,
       text: text
     });
   },

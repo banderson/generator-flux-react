@@ -25,7 +25,7 @@ const <%= name %> = assign({}, BaseStore, {
     let action = payload.action;
 
     switch(action.type) {
-      case Constants.ActionTypes.ADD_TASK:
+      case Constants.ActionTypes.TASK_ADDED:
         let text = action.text.trim();
         // NOTE: if this action needs to wait on another store:
         // Dispatcher.waitFor([OtherStore.dispatchToken]);
