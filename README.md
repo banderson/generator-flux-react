@@ -2,6 +2,9 @@
 
 > [Flux](http://facebook.github.io/flux/)/[React](http://facebook.github.io/react/) application generator
 
+#### _Interested in taking next-gen Flux for a spin?_
+Try the new [generator-redux](https://github.com/banderson/generator-redux) to get a sneak peek at the future of functional Flux/React!
+
 ## Getting Started
 
 ### What is Flux?
