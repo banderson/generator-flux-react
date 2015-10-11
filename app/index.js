@@ -79,7 +79,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
 
   npm: function() {
     this.npmInstall([
-      'react', 'flux', 'object-assign', 'eslint',
+      'react@0.13', 'flux', 'object-assign', 'eslint',
       'babel-eslint', 'eslint-plugin-react'
     ], { save: true });
   },
