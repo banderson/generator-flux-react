@@ -1,6 +1,8 @@
 import Dispatcher from '../Dispatcher';
 import Constants from '../Constants';
 
+/* eslint-disable no-console */
+
 export default {
   addItem(text) {
     Dispatcher.handleViewAction({
@@ -14,6 +16,6 @@ export default {
   },
 
   completeTask(task) {
-    console.warn('completeTask action not yet implemented...');
+    console.warn('completeTask action not yet implemented...', task);
   }
 };

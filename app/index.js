@@ -79,8 +79,8 @@ var FluxGenerator = yeoman.generators.Base.extend({
 
   npm: function() {
     this.npmInstall([
-      'react@0.13', 'flux', 'object-assign', 'eslint',
-      'babel-eslint', 'eslint-plugin-react', 'eslint-config-airbnb'
+      'react@0.13', 'flux', 'object-assign', 'eslint', 'babel-eslint',
+      'eslint-plugin-react', 'gulp-eslint', 'eslint-config-airbnb'
     ], { save: true });
   },
 
