@@ -13,7 +13,7 @@ export default React.createClass({
     return (
       <ul>
         {tasks.map(task =>
-          <Task task={task} />
+          <Task task={task} key={task.title} />
         )}
       </ul>
     );

@@ -14,7 +14,7 @@ export default React.createClass({
     return (
       <form id="task-list">
         {tasks.map(task =>
-          <Task task={task} />
+          <Task task={task} key={task.title} />
         )}
       </form>
     );
