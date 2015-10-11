@@ -38,7 +38,7 @@ const <%= name %> = assign({}, BaseStore, {
 
     // add more cases for other actionTypes...
 
-    // no default...
+    // no default
     }
   })
 });

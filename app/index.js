@@ -98,7 +98,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
       case 'naked':
         break;
       case 'material-ui':
-        this.npmInstall(['material-ui-sass'], { save: true });
+        this.npmInstall(['material-ui@0.12', 'material-ui-sass'], { save: true });
       default:
         this.npmInstall([this.uiChoice], { save: true });
         break;
