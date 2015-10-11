@@ -8,7 +8,7 @@ let _data = [];
 
 // add private functions to modify data
 function addItem(title, completed = false) {
-  _data = [_data].concat({title, completed});
+  _data = _data.concat({title, completed});
 }
 
 // Facebook style store creation.
