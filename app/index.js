@@ -124,6 +124,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');
     this.copy('eslintrc', '.eslintrc');
+    this.copy('js/BaseStore.js', 'src/js/stores/BaseStore.js');
     this.composeWith('flux:store', {args: [this.defaultStore]});
     this.composeWith('flux:action', {args: [this.defaultActionCreator]});
   }

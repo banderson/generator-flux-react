@@ -8,7 +8,6 @@ var FluxGenerator = yeoman.generators.NamedBase.extend({
   },
 
   writing: function () {
-    this.template('base.js', 'src/js/stores/BaseStore.js');
     this.template('store.js', 'src/js/stores/'+ this.name +'.js');
   }
 });
