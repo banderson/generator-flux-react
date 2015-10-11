@@ -1,8 +1,7 @@
 import React, {PropTypes} from 'react';
 import TaskList from './TaskList.jsx';
 import {AppCanvas, RaisedButton, Styles} from 'material-ui';
-
-const ThemeManager = new Styles.ThemeManager();
+import lightTheme from 'material-ui/lib/styles/raw-themes/light-raw-theme';
 
 export default React.createClass({
   propTypes: {
@@ -14,7 +13,7 @@ export default React.createClass({
   getDefaultProps() {
     return {
       tasks: []
-    }
+    };
   },
 
   childContextTypes: {
@@ -23,7 +22,7 @@ export default React.createClass({
 
   getChildContext() {
     return {
-      muiTheme: ThemeManager.getCurrentTheme()
+      muiTheme: Styles.ThemeManager.getMuiTheme(lightTheme)
     };
   },
 
