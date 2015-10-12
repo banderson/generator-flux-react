@@ -7,17 +7,17 @@ var watchify = require('watchify');
 var connect = require('gulp-connect');
 var config = require('../config').browserify;
 
-watchify.args.debug = config.debug;
-var bundler = watchify(browserify(config.src, watchify.args));
+var b = browserify(config.src, { cache: {}, packageCache: {}, debug: config.debug });
 config.settings.transform.forEach(function(t) {
-  bundler.transform(t);
+  b.transform(t);
 });
+var w = watchify(b);
 
 gulp.task('browserify', bundle);
-bundler.on('update', bundle);
+w.on('update', bundle);
 
-function bundle() {
-  return bundler.bundle()
+function bundle(){
+  return w.bundle()
   // log errors if they happen
   .on('error', gutil.log.bind(gutil, 'Browserify Error'))
   .pipe(source(config.outputName))
