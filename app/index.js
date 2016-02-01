@@ -75,6 +75,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
     this.template('_package.json', 'package.json');
     this.template('_README.md', 'README.md');
     this.copy('_bower.json', 'bower.json');
+    this.copy('babelrc', '.babelrc');
   },
 
   npm: function() {
@@ -113,7 +114,7 @@ var FluxGenerator = yeoman.generators.Base.extend({
   },
 
   transpilation: function() {
-    this.npmInstall(['babelify'], { 'saveDev': true });
+    this.npmInstall(['babelify', 'babel-preset-es2015', 'babel-preset-react'], { 'saveDev': true });
   },
 
   styles: function() {
