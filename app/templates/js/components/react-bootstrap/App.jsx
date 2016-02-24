@@ -30,8 +30,8 @@ export default React.createClass({
 
         <TaskList tasks={tasks} />
 
-        <Button onClick={onAddTask} bsStyle="primary">Add New</Button>
-        <Button onClick={onClear} bsStyle="danger">Clear List</Button>
+        <Button style={{margin: 5}} onClick={onAddTask} bsStyle="primary">Add New</Button>
+        <Button style={{margin: 5}} onClick={onClear} bsStyle="danger">Clear List</Button>
       </div>
     );
   }
