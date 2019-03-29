@@ -1,3 +1,5 @@
+# Obsolete: use [Create React App](https://github.com/facebook/create-react-app) / [Redux starter kit](https://github.com/reduxjs/redux-starter-kit)
+
 # generator-flux
 
 > [Flux](http://facebook.github.io/flux/)/[React](http://facebook.github.io/react/) application generator
